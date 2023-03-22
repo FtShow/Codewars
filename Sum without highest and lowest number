@@ -1,0 +1,19 @@
+// Task
+// Sum all the numbers of a given array ( cq. list ), except the highest and the lowest element ( by value, not by index! ).
+// The highest or lowest element respectively is a single element at each edge, even if there are more than one with the same value.
+// Mind the input validation.
+
+function sumArray(array) {
+  
+  if(!Array.isArray(array) || array.length < 3){
+    return 0;
+  }
+  array.sort((a,b)=>a-b);
+  array.pop();
+  array.shift();
+
+  console.log(array)
+ let result = array.reduce((acc, elem)=> acc + elem, 0);
+  return result;
+
+}
